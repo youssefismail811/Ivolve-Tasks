@@ -30,5 +30,3 @@ sudo addgroup ivolveteam
 sudo adduser -G ivolveteam admin
 su - admin 
 sudo install apt nginx
-
----
