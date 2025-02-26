@@ -35,8 +35,8 @@ The script iterates through all IP addresses in the `172.16.17.x` subnet and pin
    ```
 ### 2. Example Output
 Server 172.16.17.0 is unreachable
-Server 172.16.17.1 is unreachable
+Server 172.16.17.1 is up and running
+Server 172.16.17.2 is unreachable
 ...
-Server 172.16.17.257 is up and running
 
 
