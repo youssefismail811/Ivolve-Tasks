@@ -28,11 +28,11 @@ Create a new group named `ivolveteam`:
 ```bash
 sudo addgroup ivolveteam
 ```
-2. Create a New User:
+### 2. Create a New User:
 ```bash
 sudo adduser -G ivolveteam admin
 ```
-3. Configure Sudo Permissions:
+### 3. Configure Sudo Permissions:
 ```bash
 su - admin 
 sudo install apt nginx
