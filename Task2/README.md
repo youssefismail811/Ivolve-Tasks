@@ -30,7 +30,7 @@ Install `mysql` for sending emails:
 ```
  ---
 
-### 2. Create Backup Script
+### 2.  Create Backup Script
 using nano for bath to put script:
 
 ```bash
@@ -49,7 +49,7 @@ Make it executable:
 sudo chmod +x /usr/local/bin/mysql_backup.sh
 ```
 
-### 3. Set Up Cron Job
+### 3.  Set Up Cron Job
 ```bash
 sudo crontab -e
 ```
