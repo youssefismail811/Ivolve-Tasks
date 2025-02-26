@@ -31,6 +31,7 @@ sudo addgroup ivolveteam
 ### 2. Create a New User:
 ```bash
 sudo adduser -G ivolveteam admin
+sudo passwd admin
 ```
 ### 3. Configure Sudo Permissions:
 ```bash

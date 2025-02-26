@@ -1,19 +1,16 @@
-# Disk Space Monitoring Script
+# Monitoring Script MySQL Installation and Backup Automation
 
-This project automates the process of monitoring disk space usage for the root file system (`/`). If the disk usage exceeds a specified threshold (10%), the script sends an email alert. The script is scheduled to run daily at 5:00 PM using `cron`.
+This project automates the process of monitoring disk space usage for the root file system (`/`). The script is scheduled to run weekly at 5:00 PM using `cron`.
 
 ---
 
 ## Table of Contents
 - [Description](#description)
-- [Requirements](#requirements)
 - [Setup](#setup)
   - [Install Dependencies](#1-install-dependencies)
-  - [Configure Email Settings](#2-configure-email-settings)
-  - [Create the Script](#3-create-the-script)
-  - [Schedule the Script with Cron](#4-schedule-the-script-with-cron)
-- [Usage](#usage)
-- [License](#license)
+  - [Create a backup script](#3-create-a-backup-script)
+  - [Set up a cron job](#4-set-up-a-cron-job)
+
 
 ---
 
@@ -21,18 +18,45 @@ This project automates the process of monitoring disk space usage for the root f
 This script checks the disk space usage of the root file system (`/`). If the usage exceeds 10%, it sends an email alert to a specified recipient. The script is scheduled to run daily at 5:00 PM using `cron`.
 
 ---
-
-## Requirements
-- Linux-based system (e.g., Ubuntu).
-- `mailutils` or `sendmail` installed for sending emails.
-- `cron` installed for scheduling the script.
-
----
-
+ 
 ## Setup
 
 ### 1. Install Dependencies
-Install `mailutils` for sending emails:
+Install `mysql` for sending emails:
+
 ```bash
-sudo apt update
-sudo apt install mailutils
+ sudo apt install mysql-server
+ sudo apt update
+```
+ ---
+
+### 2. Create a backup script
+using nano for bath to put script
+```bash
+sudo nano /usr/local/bin/mysql_backup.sh
+```
+Adding to file
+```bash
+#!/bin/bash
+
+date=$(date +"%Y-%m-%d_%H-%M-%S")
+mkdir -p /backup
+mysqldump -u root -predhat --all-databases > /backup/mysql_backup_$date.sql
+```
+Make it executable:
+```bash
+sudo chmod +x /usr/local/bin/mysql_backup.sh
+```
+
+### 3. Set up a cron job
+```bash
+sudo crontab -e
+```
+edit file by adding
+```bash
+0 5 * * 0 /usr/local/bin/mysql_backup.sh
+```
+finally check
+```bash
+sudo /usr/local/bin/mysql_backup.sh
+```
