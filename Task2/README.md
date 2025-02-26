@@ -8,8 +8,8 @@ This project automates the process of monitoring disk space usage for the root f
 - [Description](#description)
 - [Setup](#setup)
   - [Install Dependencies](#1-install-dependencies)
-  - [Create Backup Script](#3-create-a-backup-script)
-  - [Set Up  Cron Job](#4-set-up-a-cron-job)
+  - [Create Backup Script](#2-create-a-backup-script)
+  - [Set Up  Cron Job](#3-set-up-a-cron-job)
 
 
 ---
