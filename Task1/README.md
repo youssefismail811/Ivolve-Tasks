@@ -28,11 +28,11 @@ Create a new group named `ivolveteam`:
 ```bash
 sudo addgroup ivolveteam
 ```
-2. Add user to group:
+2. Create a New User:
 ```bash
 sudo adduser -G ivolveteam admin
 ```
-3. Switch to admin and try install nginx without password:
+3. Configure Sudo Permissions:
 ```bash
 su - admin 
 sudo install apt nginx
