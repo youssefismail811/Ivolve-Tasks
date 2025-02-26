@@ -8,8 +8,8 @@ This project automates the process of monitoring disk space usage for the root f
 - [Description](#description)
 - [Setup](#setup)
   - [Install Dependencies](#1-install-dependencies)
-  - [Create a backup script](#3-create-a-backup-script)
-  - [Set up a cron job](#4-set-up-a-cron-job)
+  - [Create Backup Script](#3-create-a-backup-script)
+  - [Set Up  Cron Job](#4-set-up-a-cron-job)
 
 
 ---
@@ -30,12 +30,13 @@ Install `mysql` for sending emails:
 ```
  ---
 
-### 2. Create a backup script
-using nano for bath to put script
+### 2. Create Backup Script
+using nano for bath to put script:
+
 ```bash
 sudo nano /usr/local/bin/mysql_backup.sh
 ```
-Adding to file
+Adding to file:
 ```bash
 #!/bin/bash
 
@@ -48,15 +49,15 @@ Make it executable:
 sudo chmod +x /usr/local/bin/mysql_backup.sh
 ```
 
-### 3. Set up a cron job
+### 3. Set Up Cron Job
 ```bash
 sudo crontab -e
 ```
-edit file by adding
+edit file by adding:
 ```bash
 0 5 * * 0 /usr/local/bin/mysql_backup.sh
 ```
-finally check
+finally check:
 ```bash
 sudo /usr/local/bin/mysql_backup.sh
 ```
