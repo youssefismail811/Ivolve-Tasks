@@ -1,0 +1,2 @@
+[webservers]
+192.168.26.128 ansible_user=student
